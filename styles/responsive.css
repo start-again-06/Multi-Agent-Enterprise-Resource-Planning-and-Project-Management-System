@@ -1,0 +1,267 @@
+/* frontend/src/styles/responsive.css */
+
+/* -------------------------------------------------------------------------- */
+/* Large tablets / small desktops                                             */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header-search {
+    width: 220px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tablets                                                                    */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .sidebar {
+    width: 260px;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-content {
+    padding: 20px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header-search {
+    width: 200px;
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .page-header-actions {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile                                                                     */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  :root {
+    --font-size-3xl: 26px;
+    --font-size-2xl: 22px;
+    --font-size-xl: 18px;
+  }
+
+  .page-content {
+    padding: 16px;
+  }
+
+  .header {
+    height: 58px;
+
+    padding: 0 14px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .page-header-title {
+    font-size: 22px;
+  }
+
+  .page-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .page-header-actions .btn {
+    flex: 1;
+  }
+
+  .card-header {
+    padding: 14px 16px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card-value {
+    font-size: 24px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .table-container {
+    margin-right: -16px;
+    margin-left: -16px;
+
+    width: calc(100% + 32px);
+
+    border-right: 0;
+    border-left: 0;
+
+    border-radius: 0;
+  }
+
+  .data-table {
+    min-width: 720px;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .modal {
+    max-height: 90vh;
+
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modal-footer {
+    flex-wrap: wrap;
+  }
+
+  .modal-footer .btn {
+    flex: 1;
+  }
+
+  .btn {
+    min-height: 40px;
+  }
+
+  .btn-sm {
+    min-height: 34px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Small mobile devices                                                       */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 400px) {
+  .page-content {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 0 10px;
+  }
+
+  .stat-card-value {
+    font-size: 22px;
+  }
+
+  .page-header-actions {
+    flex-direction: column;
+  }
+
+  .page-header-actions .btn {
+    width: 100%;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Touch devices                                                              */
+/* -------------------------------------------------------------------------- */
+
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .sidebar-link {
+    min-height: 44px;
+  }
+
+  .form-input,
+  .form-select {
+    min-height: 44px;
+  }
+
+  .data-table td,
+  .data-table th {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reduced motion                                                             */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
